@@ -24,7 +24,7 @@ function renderHeader(parent) {
     container.dataset.lang = lang;
     const flag = document.createElement("img");
     flag.classList.add("lang__ico");
-    flag.src = `/assets/img/${lang}.svg`;
+    flag.src = `assets/img/${lang}.svg`;
     flag.alt = lang;
     flag.title = lang;
     container.append(flag);
