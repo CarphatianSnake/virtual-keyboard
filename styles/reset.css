@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  line-height: 1;
+}
+
 body {
   background-color: #f0f0f0;
   height: 100vh;
