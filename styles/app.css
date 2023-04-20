@@ -1,0 +1,9 @@
+.app {
+  align-items: center;
+  display: flex;
+  height: inherit;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 1rem;
+}

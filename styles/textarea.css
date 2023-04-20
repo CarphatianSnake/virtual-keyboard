@@ -1,0 +1,10 @@
+.header {
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.textarea {
+  min-height: 150px;
+  outline: none;
+  width: 100%;
+}
