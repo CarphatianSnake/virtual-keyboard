@@ -227,7 +227,7 @@ const buttons = [
   {
     code: "Tab",
     character: "Tab",
-    show: false
+    show: true
   },
   {
     code: "CapsLock",

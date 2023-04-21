@@ -49,6 +49,8 @@ window.addEventListener("keydown", (e) => {
         value = character[lang];
       } else if (code === "Enter") {
         value = "\n";
+      } else if (code === "Tab") {
+        value = "    ";
       } else {
         value = character;
       }
