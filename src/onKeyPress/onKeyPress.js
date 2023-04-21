@@ -3,7 +3,7 @@ import getKeyCode from "./getKeyCode.js";
 import getKeyValue from "./getKeyValue.js";
 
 function onKeyPress(e, caps) {
-  const { shiftKey, ctrlKey } = e;
+  const { shiftKey } = e;
   const isCaps = caps.get;
   const keyCode = getKeyCode(e);
   const lang = window.localStorage.getItem("lang");
@@ -12,6 +12,12 @@ function onKeyPress(e, caps) {
 
   if (keyCode === "CapsLock") {
     caps.set = !isCaps;
+    const indicator = document.querySelector(".btn__caps-indicator");
+    if (caps.get) {
+      indicator.classList.add("btn__caps-indicator_active");
+    } else {
+      indicator.classList.remove("btn__caps-indicator_active");
+    }
   }
 
   if (btn) {
