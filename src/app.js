@@ -4,6 +4,7 @@ import onKeyPress from "./onKeyPress/onKeyPress.js";
 import onClickHandler from "./onClickHandler/onClickHandler.js";
 import prevDefault from "../utils/prevDefault.js";
 import CapsLock from "../utils/CapsLock.js";
+import changeLang from "./changeLang/changeLang.js";
 
 const caps = new CapsLock();
 
@@ -35,7 +36,7 @@ window.addEventListener("keydown", (e) => {
 
 window.addEventListener("keyup", (e) => {
 
-  const { code } = e;
+  const { code, shiftKey, ctrlKey } = e;
 
   prevDefault(e);
 
@@ -43,6 +44,12 @@ window.addEventListener("keyup", (e) => {
 
   if (pressedButton) {
     pressedButton.classList.remove("btn_active");
+    if (code === "ControlLeft" && shiftKey) {
+      changeLang(e);
+    }
+    if (code === "ShiftLeft" && ctrlKey) {
+      changeLang(e);
+    }
   }
 
 })
