@@ -3,7 +3,7 @@ import getKeyCode from "./getKeyCode.js";
 import getKeyValue from "./getKeyValue.js";
 
 function onKeyPress(e, caps) {
-  const { shiftKey } = e;
+  const { shiftKey, ctrlKey } = e;
   const isCaps = caps.get;
   const keyCode = getKeyCode(e);
   const lang = window.localStorage.getItem("lang");
@@ -20,7 +20,7 @@ function onKeyPress(e, caps) {
     if (show) {
       const options = { keyCode, shiftKey, isCaps };
       let char = "";
-      if (shiftKey) {
+      if (shiftKey && altCharacter) {
         if (altCharacter instanceof Object) {
           char = altCharacter[lang] ? altCharacter : character;
         } else {
@@ -29,6 +29,7 @@ function onKeyPress(e, caps) {
       } else {
         char = character;
       }
+      
       textarea.value += getKeyValue(char, options);
     }
   }

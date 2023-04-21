@@ -1,37 +1,38 @@
 import renderKeyboard from "../keyboard/renderKeyboard.js";
 
 function changeLang(e) {
-  const { target } = e;
 
-  function getLangContainer(target) {
+  function getLanguage(e) {
+    const { target, code } = e;
+
     if (target.dataset.lang) {
-      return target;
+      return target.dataset.lang
     }
     if (target.parentElement.dataset.lang) {
-      return target.parentElement;
+      return target.parentElement.dataset.lang
     }
-    return;
+    if (code === "ShiftLeft" || code === "ControlLeft") {
+      const lang = window.localStorage.getItem("lang");
+      return lang === "en" ? "ua" : "en";
+    }
   }
 
-  const langContainer = getLangContainer(target);
+  const lang = getLanguage(e);
 
-  if (langContainer) {
-    const test = [...langContainer.parentElement.children];
+  if (lang) {
+    window.localStorage.setItem("lang", lang);
 
-    test.forEach((elem) => {
-      elem.classList.remove("lang_active");
-    });
+    const languages = document.querySelectorAll(".lang__ico__container");
 
-    langContainer.classList.add("lang_active");
+    languages.forEach((lang) => {
+      lang.classList.remove("lang_active");
+    })
 
-    window.localStorage.setItem("lang", langContainer.dataset.lang);
-
+    const targetLangElement = document.querySelector(`.lang__ico__container[data-lang=${lang}]`);
+    targetLangElement.classList.add("lang_active");
     document.querySelector(".keyboard").remove();
-
     const main = document.querySelector(".main");
-
     renderKeyboard(main);
-
   }
 }
 
