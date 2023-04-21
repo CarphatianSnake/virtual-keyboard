@@ -31,16 +31,21 @@
   width: 100%;
 }
 
+.btn:hover {
+  background-color: rgb(75, 60, 54);
+  box-shadow: 2px 2px 2px #2e2e2e;
+}
+
 .btn__uppercase {
   left: 0.5rem;
   position: absolute;
   top: 0.25rem;
 }
 
-.btn:hover,
+.btn:active,
 .btn_active {
   background-color: rgb(115, 68, 126);
-  box-shadow: 2px 2px 2px rgb(45, 30, 48);
+  box-shadow: 1px 1px 1px rgb(45, 30, 48);
 }
 
 .btn[data-key="KeyA"] {
