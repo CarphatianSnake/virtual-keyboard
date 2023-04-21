@@ -29,30 +29,32 @@ window.addEventListener("keydown", (e) => {
 
   const btn = buttons.find((button) => button.code === code);
 
-  const { character, show, altCharacter } = btn;
+  if (btn) {
+    const { character, show, altCharacter } = btn;
 
-  if (code === "CapsLock") {
-    caps = !caps;
-  }
-
-  if (show) {
-    let value = "";
-
-    if (shiftKey && altCharacter) {
-      if (altCharacter instanceof Object) {
-        value = altCharacter[lang];
-      } else {
-        value = altCharacter;
-      }
-    } else if (character instanceof Object) {
-      value = character[lang];
-    } else if (code === "Enter") {
-      value = "\n";
-    } else {
-      value = character;
+    if (code === "CapsLock") {
+      caps = !caps;
     }
 
-    textarea.value += shiftKey || caps ? value : value.toLowerCase();
+    if (show) {
+      let value = "";
+
+      if (shiftKey && altCharacter) {
+        if (altCharacter instanceof Object) {
+          value = altCharacter[lang];
+        } else {
+          value = altCharacter;
+        }
+      } else if (character instanceof Object) {
+        value = character[lang];
+      } else if (code === "Enter") {
+        value = "\n";
+      } else {
+        value = character;
+      }
+
+      textarea.value += shiftKey || caps ? value : value.toLowerCase();
+    }
   }
 
   prevDefault(e);
