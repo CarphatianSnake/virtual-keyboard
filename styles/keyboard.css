@@ -36,10 +36,26 @@
   box-shadow: 2px 2px 2px #2e2e2e;
 }
 
-.btn__uppercase {
+.btn__uppercase,
+.btn__caps-indicator {
   left: 0.5rem;
   position: absolute;
   top: 0.25rem;
+}
+
+.btn__caps-indicator {
+  content: "";
+  background-color: rgb(25, 99, 25);
+  border-radius: 50%;
+  height: 10px;
+  opacity: 0;
+  top: 0.5rem;
+  transition: opacity 300ms ease-out;
+  width: 10px;
+}
+
+.btn__caps-indicator_active {
+  opacity: 1;
 }
 
 .btn:active,

@@ -16,6 +16,11 @@ function renderKeyboard(parent) {
       upperCase.textContent = getCharacter(altCharacter);
       button.append(upperCase);
     }
+    if (code === "CapsLock") {
+      const indicator = document.createElement("div");
+      indicator.classList.add("btn__caps-indicator");
+      button.append(indicator);
+    }
     keyboard.append(button);
   })
   parent.append(keyboard);
