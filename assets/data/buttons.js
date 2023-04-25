@@ -467,22 +467,22 @@ const buttons = [
   {
     code: "ArrowUp",
     character: "↑",
-    show: false
+    show: true
   },
   {
     code: "ArrowDown",
     character: "↓",
-    show: false
+    show: true
   },
   {
     code: "ArrowRight",
     character: "→",
-    show: false
+    show: true
   },
   {
     code: "ArrowLeft",
     character: "←",
-    show: false
+    show: true
 
   }, 
   {
