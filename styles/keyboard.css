@@ -47,6 +47,7 @@
   content: "";
   background-color: rgb(25, 99, 25);
   border-radius: 50%;
+  box-shadow: 0 0 5px rgb(38, 151, 38);
   height: 10px;
   opacity: 0;
   top: 0.5rem;
