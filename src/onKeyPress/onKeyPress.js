@@ -1,6 +1,7 @@
 import buttons from "../../assets/data/buttons.js";
 import getKeyCode from "./getKeyCode.js";
 import getKeyValue from "./getKeyValue.js";
+import onKeyDelete from "./onKeyDelete.js";
 
 function onKeyPress(e, caps) {
   const { shiftKey } = e;
@@ -9,6 +10,10 @@ function onKeyPress(e, caps) {
   const lang = window.localStorage.getItem("lang");
   const textarea = document.querySelector(".textarea");
   const btn = buttons.find((button) => button.code === keyCode);
+
+  if (keyCode === "Backspace" || keyCode === "Delete") {
+    onKeyDelete(keyCode);
+  }
 
   if (keyCode === "CapsLock") {
     caps.set = !isCaps;
