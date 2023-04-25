@@ -3,10 +3,11 @@ import renderMain from "./main/renderMain.js";
 import onKeyPress from "./onKeyPress/onKeyPress.js";
 import onClickHandler from "./onClickHandler/onClickHandler.js";
 import prevDefault from "../utils/prevDefault.js";
-import CapsLock from "../utils/CapsLock.js";
+import State from "../utils/State.js";
 import changeLang from "./changeLang/changeLang.js";
 
-const caps = new CapsLock();
+const selectionState = new State(0);
+const caps = new State(false);
 
 const app = document.createElement("div");
 app.classList.add("app");
@@ -15,14 +16,14 @@ renderHeader(app);
 renderMain(app);
 
 document.addEventListener("click", (e) => {
-  onClickHandler(e, caps);
+  onClickHandler(e, caps, selectionState);
 });
 
 window.addEventListener("keydown", (e) => {
 
   const { code } = e;
 
-  onKeyPress(e, caps);
+  onKeyPress(e, caps, selectionState);
 
   prevDefault(e);
 

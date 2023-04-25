@@ -1,6 +1,6 @@
-class CapsLock {
-  constructor() {
-    this.value = false;
+class State {
+  constructor(init = null) {
+    this.value = init;
   }
 
   get get() {
@@ -12,4 +12,4 @@ class CapsLock {
   }
 }
 
-export default CapsLock;
+export default State;
