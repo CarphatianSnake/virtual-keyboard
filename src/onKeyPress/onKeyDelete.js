@@ -1,24 +1,19 @@
-function onKeyDelete(key) {
+import onTextChange from "../../utils/onTextChange.js";
+import setSelection from "../../utils/setSelection.js";
+
+function onKeyDelete(key, selectionState) {
   const textarea = document.querySelector(".textarea");
-  const { selectionStart, selectionEnd, value } = textarea;
+  const { selectionStart, selectionEnd } = textarea;
 
-  const onValueChange = (start, end) => textarea.value = value.slice(0, start) + value.slice(end);
-  const setSelection = (start, end) => {
-    textarea.selectionStart = start;
-    textarea.selectionEnd =  end;
+  if (key === "Backspace" && selectionStart > 0) {
+    const start = selectionStart === selectionEnd ? selectionStart - 1 : selectionStart;
+    onTextChange(start, selectionEnd);
+    setSelection(start, selectionState);
   }
-
-  if (selectionStart === selectionEnd) {
-    if (key === "Backspace" && selectionStart > 0) {
-      onValueChange(selectionStart - 1, selectionEnd);
-      setSelection(selectionStart - 1, selectionEnd - 1);
-    } if (key === "Delete") {
-      onValueChange(selectionStart, selectionEnd + 1);
-      setSelection(selectionStart, selectionEnd);
-    }
-  } else {
-    onValueChange(selectionStart, selectionEnd);
-    setSelection(selectionStart, selectionStart);
+  if (key === "Delete") {
+    const end = selectionStart === selectionEnd ? selectionEnd + 1 : selectionEnd;
+    onTextChange(selectionStart, end);
+    setSelection(selectionStart, selectionState);
   }
 }
 
