@@ -14,9 +14,5 @@ module.exports = {
       'error',
       'ignorePackages',
     ],
-    'linebreak-style': [
-      'error',
-      'windows',
-    ],
   },
 };
