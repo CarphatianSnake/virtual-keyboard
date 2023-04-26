@@ -1,7 +1,7 @@
 import renderKeyboard from '../keyboard/renderKeyboard.js';
 import renderFooter from '../footer/renderFooter.js';
 
-function changeLang(e) {
+function changeLang(e, buttons) {
   function getLanguage() {
     const { target, code } = e;
 
@@ -36,7 +36,7 @@ function changeLang(e) {
 
     document.querySelector('.keyboard').remove();
     const main = document.querySelector('.main');
-    renderKeyboard(main);
+    renderKeyboard(main, buttons);
 
     document.querySelector('.footer').remove();
     const app = document.querySelector('.app');

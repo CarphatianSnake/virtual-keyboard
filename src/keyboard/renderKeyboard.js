@@ -1,12 +1,8 @@
-import buttons from '../../assets/data/buttons.js';
-import Button from './Button.js';
-
-function renderKeyboard(parent) {
+function renderKeyboard(parent, buttons) {
   const keyboard = document.createElement('section');
   keyboard.classList.add('keyboard');
   buttons.forEach((btn) => {
-    const button = new Button(btn);
-    button.render(keyboard);
+    btn.render(keyboard);
   });
   parent.append(keyboard);
 }
