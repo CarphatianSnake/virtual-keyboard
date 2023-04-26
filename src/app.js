@@ -1,5 +1,6 @@
 import renderHeader from './header/renderHeader.js';
 import renderMain from './main/renderMain.js';
+import renderFooter from './footer/renderFooter.js';
 import onKeyPress from './onKeyPress/onKeyPress.js';
 import onClickHandler from './onClickHandler/onClickHandler.js';
 import prevDefault from '../utils/prevDefault.js';
@@ -14,6 +15,7 @@ app.classList.add('app');
 document.body.append(app);
 renderHeader(app);
 renderMain(app);
+renderFooter(app);
 
 document.addEventListener('click', (e) => {
   onClickHandler(e, caps, selectionState);
