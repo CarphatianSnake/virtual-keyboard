@@ -7,7 +7,7 @@ class State {
     return this.value;
   }
 
-  set set(value) {
+  set(value) {
     this.value = value;
   }
 }

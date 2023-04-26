@@ -3,7 +3,7 @@ function getKeyCode(e) {
   if (code) {
     return code;
   }
-  const key = target.dataset.key
+  const { key } = target.dataset;
   if (key) {
     return key;
   }
