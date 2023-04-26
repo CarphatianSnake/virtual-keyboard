@@ -1,4 +1,3 @@
-import renderKeyboard from '../keyboard/renderKeyboard.js';
 import renderFooter from '../footer/renderFooter.js';
 
 function changeLang(e, buttons) {
@@ -34,9 +33,9 @@ function changeLang(e, buttons) {
     const targetLangElement = document.querySelector(`.lang__ico__container[data-lang=${lang}]`);
     targetLangElement.classList.add('lang_active');
 
-    document.querySelector('.keyboard').remove();
-    const main = document.querySelector('.main');
-    renderKeyboard(main, buttons);
+    Object.keys(buttons).forEach((key) => {
+      buttons[key].updateContent();
+    });
 
     document.querySelector('.footer').remove();
     const app = document.querySelector('.app');

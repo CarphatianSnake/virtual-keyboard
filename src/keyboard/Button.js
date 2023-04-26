@@ -4,6 +4,8 @@ class Button {
     this.character = props.character;
     this.altCharacter = props.altCharacter;
     this.show = props.show;
+    this.element = this.createElement();
+    this.childElement = this.createChildElement();
   }
 
   getCharacter = (type) => {
@@ -22,23 +24,40 @@ class Button {
     }
   };
 
-  render = (parent) => {
-    const button = document.createElement('button');
-    button.classList.add('btn');
-    button.textContent = this.getCharacter('character');
-    button.dataset.key = this.code;
-    if (this.altCharacter) {
-      const upperCase = document.createElement('div');
-      upperCase.classList.add('btn__uppercase');
-      upperCase.textContent = this.getCharacter('altCharacter');
-      button.append(upperCase);
+  createElement = () => {
+    const element = document.createElement('button');
+    element.classList.add('btn');
+    element.dataset.key = this.code;
+    element.textContent = this.getCharacter('character');
+    return element;
+  };
+
+  createChildElement = () => {
+    const childElement = this.altCharacter ? document.createElement('div') : null;
+    if (childElement) {
+      childElement.classList.add('btn__uppercase');
+      childElement.textContent = this.getCharacter('altCharacter');
+      this.element.append(childElement);
     }
+    return childElement;
+  };
+
+  updateContent = () => {
+    const { element, childElement, getCharacter } = this;
+    element.textContent = getCharacter('character');
+    if (childElement) {
+      childElement.textContent = getCharacter('altCharacter');
+      element.append(childElement);
+    }
+  };
+
+  render = (parent) => {
     if (this.code === 'CapsLock') {
       const indicator = document.createElement('div');
       indicator.classList.add('btn__caps-indicator');
-      button.append(indicator);
+      this.element.append(indicator);
     }
-    parent.append(button);
+    parent.append(this.element);
   };
 }
 

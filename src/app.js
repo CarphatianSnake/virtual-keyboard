@@ -14,6 +14,7 @@ const buttons = prepareButtons();
 const app = document.createElement('div');
 app.classList.add('app');
 document.body.append(app);
+
 renderHeader(app);
 renderMain(app, buttons);
 renderFooter(app);
@@ -25,21 +26,17 @@ document.addEventListener('click', (e) => {
 window.addEventListener('keydown', (e) => {
   const { code } = e;
 
-  const button = buttons.find((btn) => btn.code === code);
-  if (button) {
-    button.animate(e);
+  if (buttons[code]) {
+    buttons[code].animate(e);
+    onKeyPress(e, caps, selectionState);
   }
-
-  onKeyPress(e, caps, selectionState);
 });
 
 window.addEventListener('keyup', (e) => {
   const { code, shiftKey, ctrlKey } = e;
 
-  const button = buttons.find((btn) => btn.code === code);
-
-  if (button) {
-    button.animate(e);
+  if (buttons[code]) {
+    buttons[code].animate(e);
     if (code === 'ControlLeft' && shiftKey) {
       changeLang(e, buttons);
     }
