@@ -5,15 +5,20 @@ function onKeyDelete(key, selectionState) {
   const textarea = document.querySelector('.textarea');
   const { selectionStart, selectionEnd } = textarea;
 
-  if (key === 'Backspace' && selectionStart > 0) {
-    const start = selectionStart === selectionEnd ? selectionStart - 1 : selectionStart;
-    onTextChange(start, selectionEnd);
+  function action(start, end) {
+    onTextChange(start, end);
     setSelection(start, selectionState);
+  }
+
+  if (key === 'Backspace') {
+    if (selectionStart !== selectionEnd || selectionStart > 0) {
+      const start = selectionStart === selectionEnd ? selectionStart - 1 : selectionStart;
+      action(start, selectionEnd);
+    }
   }
   if (key === 'Delete') {
     const end = selectionStart === selectionEnd ? selectionEnd + 1 : selectionEnd;
-    onTextChange(selectionStart, end);
-    setSelection(selectionStart, selectionState);
+    action(selectionStart, end);
   }
 }
 
