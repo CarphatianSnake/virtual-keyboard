@@ -1,495 +1,495 @@
 const buttons = [
   {
-    code: "KeyA",
+    code: 'KeyA',
     character: {
-      en: "A",
-      ua: "Ф"
+      en: 'A',
+      ua: 'Ф',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyB",
+    code: 'KeyB',
     character: {
-      en: "B",
-      ua: "И"
+      en: 'B',
+      ua: 'И',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyC",
+    code: 'KeyC',
     character: {
-      en: "C",
-      ua: "С"
+      en: 'C',
+      ua: 'С',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyD",
+    code: 'KeyD',
     character: {
-      en: "D",
-      ua: "В"
+      en: 'D',
+      ua: 'В',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyE",
+    code: 'KeyE',
     character: {
-      en: "E",
-      ua: "У"
+      en: 'E',
+      ua: 'У',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyF",
+    code: 'KeyF',
     character: {
-      en: "F",
-      ua: "А"
+      en: 'F',
+      ua: 'А',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyG",
+    code: 'KeyG',
     character: {
-      en: "G",
-      ua: "П"
+      en: 'G',
+      ua: 'П',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyH",
+    code: 'KeyH',
     character: {
-      en: "H",
-      ua: "Р"
+      en: 'H',
+      ua: 'Р',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyI",
+    code: 'KeyI',
     character: {
-      en: "I",
-      ua: "Ш"
+      en: 'I',
+      ua: 'Ш',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyJ",
+    code: 'KeyJ',
     character: {
-      en: "J",
-      ua: "О"
+      en: 'J',
+      ua: 'О',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyK",
+    code: 'KeyK',
     character: {
-      en: "K",
-      ua: "Л"
+      en: 'K',
+      ua: 'Л',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyL",
+    code: 'KeyL',
     character: {
-      en: "L",
-      ua: "Д"
+      en: 'L',
+      ua: 'Д',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyM",
+    code: 'KeyM',
     character: {
-      en: "M",
-      ua: "Ь"
+      en: 'M',
+      ua: 'Ь',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyN",
+    code: 'KeyN',
     character: {
-      en: "N",
-      ua: "Т"
+      en: 'N',
+      ua: 'Т',
     },
-    show: true
-  }, 
-  {
-    code: "KeyO",
-    character: {
-      en: "O",
-      ua: "Щ"
-    },
-    show: true
+    show: true,
   },
   {
-    code: "KeyP",
+    code: 'KeyO',
     character: {
-      en: "P",
-      ua: "З"
+      en: 'O',
+      ua: 'Щ',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyQ",
+    code: 'KeyP',
     character: {
-      en: "Q",
-      ua: "Й"
+      en: 'P',
+      ua: 'З',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyR",
+    code: 'KeyQ',
     character: {
-      en: "R",
-      ua: "К"
+      en: 'Q',
+      ua: 'Й',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyS",
+    code: 'KeyR',
     character: {
-      en: "S",
-      ua: "І"
+      en: 'R',
+      ua: 'К',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyT",
+    code: 'KeyS',
     character: {
-      en: "T",
-      ua: "Е"
+      en: 'S',
+      ua: 'І',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyU",
+    code: 'KeyT',
     character: {
-      en: "U",
-      ua: "Г"
+      en: 'T',
+      ua: 'Е',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyV",
+    code: 'KeyU',
     character: {
-      en: "V",
-      ua: "М"
+      en: 'U',
+      ua: 'Г',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyW",
+    code: 'KeyV',
     character: {
-      en: "W",
-      ua: "Ц"
+      en: 'V',
+      ua: 'М',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyX",
+    code: 'KeyW',
     character: {
-      en: "X",
-      ua: "Ч"
+      en: 'W',
+      ua: 'Ц',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyY",
+    code: 'KeyX',
     character: {
-      en: "Y",
-      ua: "Н"
+      en: 'X',
+      ua: 'Ч',
     },
-    show: true
+    show: true,
   },
   {
-    code: "KeyZ",
+    code: 'KeyY',
     character: {
-      en: "Z",
-      ua: "Я"
+      en: 'Y',
+      ua: 'Н',
     },
-    show: true
+    show: true,
   },
   {
-    code: "Space",
-    character: " ",
-    show: true
-  },
-  {
-    code: "Backquote",
+    code: 'KeyZ',
     character: {
-      en: "`",
-      ua: "'"
+      en: 'Z',
+      ua: 'Я',
+    },
+    show: true,
+  },
+  {
+    code: 'Space',
+    character: ' ',
+    show: true,
+  },
+  {
+    code: 'Backquote',
+    character: {
+      en: '`',
+      ua: "'",
     },
     altCharacter: {
-      en: "~",
-      ua: "₴"
+      en: '~',
+      ua: '₴',
     },
-    show: true
+    show: true,
   },
   {
-    code: "Tab",
-    character: "Tab",
-    show: true
+    code: 'Tab',
+    character: 'Tab',
+    show: true,
   },
   {
-    code: "CapsLock",
-    character: "CapsLock",
-    show: false
+    code: 'CapsLock',
+    character: 'CapsLock',
+    show: false,
   },
   {
-    code: "ShiftLeft",
-    character: "Shift",
-    show: false
+    code: 'ShiftLeft',
+    character: 'Shift',
+    show: false,
   },
   {
-    code: "ControlLeft",
-    character: "Ctrl",
-    show: false
+    code: 'ControlLeft',
+    character: 'Ctrl',
+    show: false,
   },
   {
-    code: "AltLeft",
-    character: "Alt",
-    show: false
+    code: 'AltLeft',
+    character: 'Alt',
+    show: false,
   },
   {
-    code: "MetaLeft",
-    character: "Win",
-    show: false
+    code: 'MetaLeft',
+    character: 'Win',
+    show: false,
   },
   {
-    code: "Digit1",
-    character: "1",
-    altCharacter: "!",
-    show: true
+    code: 'Digit1',
+    character: '1',
+    altCharacter: '!',
+    show: true,
   },
   {
-    code: "Digit2",
-    character: "2",
+    code: 'Digit2',
+    character: '2',
     altCharacter: {
-      en: "@",
-      ua: '"'
+      en: '@',
+      ua: '"',
     },
-    show: true
+    show: true,
   },
   {
-    code: "Digit3",
-    character: "3",
+    code: 'Digit3',
+    character: '3',
     altCharacter: {
-      en: "#",
-      ua: "№"
+      en: '#',
+      ua: '№',
     },
-    show: true
+    show: true,
   },
   {
-    code: "Digit4",
-    character: "4",
+    code: 'Digit4',
+    character: '4',
     altCharacter: {
-      en: "$",
-      ua: ";"
+      en: '$',
+      ua: ';',
     },
-    show: true
+    show: true,
   },
   {
-    code: "Digit5",
-    character: "5",
-    altCharacter: "%",
-    show: true
+    code: 'Digit5',
+    character: '5',
+    altCharacter: '%',
+    show: true,
   },
   {
-    code: "Digit6",
-    character: "6",
+    code: 'Digit6',
+    character: '6',
     altCharacter: {
-      en: "^",
-      ua: ":"
+      en: '^',
+      ua: ':',
     },
-    show: true
+    show: true,
   },
   {
-    code: "Digit7",
-    character: "7",
+    code: 'Digit7',
+    character: '7',
     altCharacter: {
-      en: "&",
-      ua: "?"
+      en: '&',
+      ua: '?',
     },
-    show: true
+    show: true,
   },
   {
-    code: "Digit8",
-    character: "8",
-    altCharacter: "*",
-    show: true
+    code: 'Digit8',
+    character: '8',
+    altCharacter: '*',
+    show: true,
   },
   {
-    code: "Digit9",
-    character: "9",
-    altCharacter: "(",
-    show: true
+    code: 'Digit9',
+    character: '9',
+    altCharacter: '(',
+    show: true,
   },
   {
-    code: "Digit0",
-    character: "0",
-    altCharacter: ")",
-    show: true
+    code: 'Digit0',
+    character: '0',
+    altCharacter: ')',
+    show: true,
   },
   {
-    code: "Minus",
-    character: "-",
-    altCharacter: "_",
-    show: true
+    code: 'Minus',
+    character: '-',
+    altCharacter: '_',
+    show: true,
   },
   {
-    code: "Equal",
-    character: "=",
-    altCharacter: "+",
-    show: true
+    code: 'Equal',
+    character: '=',
+    altCharacter: '+',
+    show: true,
   },
   {
-    code: "Backspace",
-    character: "Backspace",
-    show: false
+    code: 'Backspace',
+    character: 'Backspace',
+    show: false,
   },
   {
-    code: "Backslash",
-    character: "\\",
+    code: 'Backslash',
+    character: '\\',
     altCharacter: {
-      en: "|",
-      ua: "/"
+      en: '|',
+      ua: '/',
     },
-    show: true
+    show: true,
   },
   {
-    code: "BracketLeft",
+    code: 'BracketLeft',
     character: {
-      en: "[",
-      ua: "Х"
+      en: '[',
+      ua: 'Х',
     },
     altCharacter: {
-      en: "{",
-      ua: ""
+      en: '{',
+      ua: '',
     },
-    show: true
+    show: true,
   },
   {
-    code: "BracketRight",
+    code: 'BracketRight',
     character: {
-      en: "]",
-      ua: "Ї"
+      en: ']',
+      ua: 'Ї',
     },
     altCharacter: {
-      en: "}",
-      ua: ""
+      en: '}',
+      ua: '',
     },
-    show: true
+    show: true,
   },
   {
-    code: "Delete",
-    character: "Del",
-    show: false
+    code: 'Delete',
+    character: 'Del',
+    show: false,
   },
   {
-    code: "Semicolon",
+    code: 'Semicolon',
     character: {
-      en: ";",
-      ua: "Ж"
+      en: ';',
+      ua: 'Ж',
     },
     altCharacter: {
-      en: ":",
-      ua: ""
+      en: ':',
+      ua: '',
     },
-    show: true
+    show: true,
   },
   {
-    code: "Quote",
+    code: 'Quote',
     character: {
       en: "'",
-      ua: "Є"
+      ua: 'Є',
     },
     altCharacter: {
       en: '"',
-      ua: ""
+      ua: '',
     },
-    show: true
+    show: true,
   },
   {
-    code: "Enter",
-    character: "Enter",
-    show: true
+    code: 'Enter',
+    character: 'Enter',
+    show: true,
   },
   {
-    code: "Comma",
+    code: 'Comma',
     character: {
-      en: ",",
-      ua: "Б"
+      en: ',',
+      ua: 'Б',
     },
     altCharacter: {
-      en: "<",
-      ua: ""
+      en: '<',
+      ua: '',
     },
-    show: true
+    show: true,
   },
   {
-    code: "Period",
+    code: 'Period',
     character: {
-      en: ".",
-      ua: "Ю"
+      en: '.',
+      ua: 'Ю',
     },
     altCharacter: {
-      en: ">",
-      ua: ""
+      en: '>',
+      ua: '',
     },
-    show: true
+    show: true,
   },
   {
-    code: "Slash",
+    code: 'Slash',
     character: {
-      en: "/",
-      ua: "."
+      en: '/',
+      ua: '.',
     },
     altCharacter: {
-      en: "?",
-      ua: ","
+      en: '?',
+      ua: ',',
     },
-    show: true
+    show: true,
   },
   {
-    code: "ShiftRight",
-    character: "Shift",
-    show: false
+    code: 'ShiftRight',
+    character: 'Shift',
+    show: false,
   },
   {
-    code: "AltRight",
-    character: "Alt",
-    show: false
+    code: 'AltRight',
+    character: 'Alt',
+    show: false,
   },
   {
-    code: "ControlRight",
-    character: "Ctrl",
-    show: false
+    code: 'ControlRight',
+    character: 'Ctrl',
+    show: false,
   },
   {
-    code: "ArrowUp",
-    character: "↑",
-    show: true
+    code: 'ArrowUp',
+    character: '↑',
+    show: true,
   },
   {
-    code: "ArrowDown",
-    character: "↓",
-    show: true
+    code: 'ArrowDown',
+    character: '↓',
+    show: true,
   },
   {
-    code: "ArrowRight",
-    character: "→",
-    show: true
+    code: 'ArrowRight',
+    character: '→',
+    show: true,
   },
   {
-    code: "ArrowLeft",
-    character: "←",
-    show: true
+    code: 'ArrowLeft',
+    character: '←',
+    show: true,
 
-  }, 
+  },
   {
-    code: "ContextMenu",
-    character: "▤",
-    show: false
-  }
+    code: 'ContextMenu',
+    character: '▤',
+    show: false,
+  },
 ];
 
 export default buttons;

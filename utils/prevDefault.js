@@ -1,5 +1,5 @@
 function prevDefault(e) {
-  if (e.code !== "F5") {
+  if (e.code !== 'F5') {
     e.preventDefault();
   }
 }
