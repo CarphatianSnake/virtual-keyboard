@@ -2,7 +2,7 @@ import onTextChange from '../../utils/onTextChange.js';
 import setSelection from '../../utils/setSelection.js';
 import Button from './Button.js';
 
-class Delete extends Button {
+class DeleteButton extends Button {
   constructor(props) {
     super(props);
     this.onTextChange = onTextChange;
@@ -18,4 +18,4 @@ class Delete extends Button {
   };
 }
 
-export default Delete;
+export default DeleteButton;

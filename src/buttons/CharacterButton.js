@@ -9,12 +9,8 @@ class CharacterButton extends Button {
     this.setSelection = setSelection;
   }
 
-  getLanguage = () => {
-    return window.localStorage.getItem('lang');
-  }
-
   getKeyValue = (character, shiftKey, isCaps) => {
-    const language = this.getLanguage();
+    const language = window.localStorage.getItem('lang');
     let value = '';
 
     if (character instanceof Object) {
@@ -30,9 +26,9 @@ class CharacterButton extends Button {
     if (shiftKey) {
       return isCaps ? value.toLowerCase() : value;
     }
-  
+
     return isCaps ? value : value.toLowerCase();
-  }
+  };
 
   onPress = ({ e, caps, selectionState }) => {
     const lang = window.localStorage.getItem('lang');

@@ -1,5 +1,5 @@
-import renderTextarea from '../textarea/renderTextarea.js';
-import renderKeyboard from '../keyboard/renderKeyboard.js';
+import renderTextarea from './renderTextarea.js';
+import renderKeyboard from './renderKeyboard.js';
 
 function renderMain(parent, buttons) {
   const main = document.createElement('main');

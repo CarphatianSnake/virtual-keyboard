@@ -2,7 +2,7 @@ import onTextChange from '../../utils/onTextChange.js';
 import setSelection from '../../utils/setSelection.js';
 import Button from './Button.js';
 
-class Backspace extends Button {
+class BackspaceButton extends Button {
   constructor(props) {
     super(props);
     this.onTextChange = onTextChange;
@@ -20,4 +20,4 @@ class Backspace extends Button {
   };
 }
 
-export default Backspace;
+export default BackspaceButton;

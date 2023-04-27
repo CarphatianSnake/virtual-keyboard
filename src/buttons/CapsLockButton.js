@@ -1,6 +1,6 @@
 import Button from './Button.js';
 
-class CapsLock extends Button {
+class CapsLockButton extends Button {
   constructor(props) {
     super(props);
     this.childElement = this.createChildElement();
@@ -27,4 +27,4 @@ class CapsLock extends Button {
   };
 }
 
-export default CapsLock;
+export default CapsLockButton;

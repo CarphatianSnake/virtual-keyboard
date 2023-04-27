@@ -1,11 +1,10 @@
 import buttons from '../assets/data/buttons.js';
-import Button from '../src/keyboard/Button.js';
-import CharacterButton from '../src/keyboard/CharacterButton.js';
-import LeftShift from '../src/keyboard/LeftShift.js';
-import LeftCtrl from '../src/keyboard/LeftCtrl.js';
-import Delete from '../src/keyboard/Delete.js';
-import Backspace from '../src/keyboard/Backspace.js';
-import CapsLock from '../src/keyboard/CapsLock.js';
+import Button from '../src/buttons/Button.js';
+import BackspaceButton from '../src/buttons/BackspaceButton.js';
+import CapsLockButton from '../src/buttons/CapsLockButton.js';
+import CharacterButton from '../src/buttons/CharacterButton.js';
+import DeleteButton from '../src/buttons/DeleteButton.js';
+import LeftCtrlShiftButton from '../src/buttons/LeftCtrlShiftButton.js';
 
 const prepareButtons = () => {
   const btns = {};
@@ -16,19 +15,19 @@ const prepareButtons = () => {
     } else {
       switch (btn.code) {
         case ('ShiftLeft'):
-          btns[btn.code] = new LeftShift(btn);
+          btns[btn.code] = new LeftCtrlShiftButton(btn);
           break;
         case ('ControlLeft'):
-          btns[btn.code] = new LeftCtrl(btn);
+          btns[btn.code] = new LeftCtrlShiftButton(btn);
           break;
         case ('Delete'):
-          btns[btn.code] = new Delete(btn);
+          btns[btn.code] = new DeleteButton(btn);
           break;
         case ('Backspace'):
-          btns[btn.code] = new Backspace(btn);
+          btns[btn.code] = new BackspaceButton(btn);
           break;
         case ('CapsLock'):
-          btns[btn.code] = new CapsLock(btn);
+          btns[btn.code] = new CapsLockButton(btn);
           break;
         default:
           btns[btn.code] = new Button(btn);
