@@ -34,7 +34,9 @@ function changeLang(e, buttons) {
     targetLangElement.classList.add('lang_active');
 
     Object.keys(buttons).forEach((key) => {
-      buttons[key].updateContent();
+      if (key !== 'CapsLock') {
+        buttons[key].updateContent();
+      }
     });
 
     document.querySelector('.footer').remove();

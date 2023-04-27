@@ -1,10 +1,8 @@
 import renderHeader from './header/renderHeader.js';
 import renderMain from './main/renderMain.js';
 import renderFooter from './footer/renderFooter.js';
-import onKeyPress from './onKeyPress/onKeyPress.js';
-import onClickHandler from './onClickHandler/onClickHandler.js';
-import State from '../utils/State.js';
 import changeLang from './changeLang/changeLang.js';
+import State from '../utils/State.js';
 import prepareButtons from '../utils/prepareButtons.js';
 
 const selectionState = new State(0);
@@ -20,28 +18,40 @@ renderMain(app, buttons);
 renderFooter(app);
 
 document.addEventListener('click', (e) => {
-  onClickHandler(e, caps, selectionState, buttons);
+  const textarea = document.querySelector('.textarea');
+  if (e.target.classList.contains('textarea')) {
+    selectionState.set(textarea.selectionStart);
+  }
+
+  changeLang(e, buttons);
+
+  const { key } = e.target.dataset;
+  if (key) {
+    const { onPress } = buttons[key];
+    onPress({
+      e, buttons, selectionState, caps,
+    });
+  }
 });
 
 window.addEventListener('keydown', (e) => {
   const { code } = e;
 
   if (buttons[code]) {
-    buttons[code].animate(e);
-    onKeyPress(e, caps, selectionState);
+    const { animate, onPress } = buttons[code];
+    animate(e);
+    if (onPress) {
+      onPress({
+        e, buttons, selectionState, caps,
+      });
+    }
   }
 });
 
 window.addEventListener('keyup', (e) => {
-  const { code, shiftKey, ctrlKey } = e;
+  const { code } = e;
 
   if (buttons[code]) {
     buttons[code].animate(e);
-    if (code === 'ControlLeft' && shiftKey) {
-      changeLang(e, buttons);
-    }
-    if (code === 'ShiftLeft' && ctrlKey) {
-      changeLang(e, buttons);
-    }
   }
 });

@@ -52,11 +52,6 @@ class Button {
   };
 
   render = (parent) => {
-    if (this.code === 'CapsLock') {
-      const indicator = document.createElement('div');
-      indicator.classList.add('btn__caps-indicator');
-      this.element.append(indicator);
-    }
     parent.append(this.element);
   };
 }
