@@ -26,6 +26,7 @@ function renderHeader(parent) {
     flag.src = `assets/img/${lang}.svg`;
     flag.alt = lang;
     flag.title = lang;
+    flag.dataset.lang = lang;
     container.append(flag);
     language.append(container);
   });

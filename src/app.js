@@ -1,54 +1,50 @@
-import renderHeader from './header/renderHeader.js';
-import renderMain from './main/renderMain.js';
-import renderFooter from './footer/renderFooter.js';
-import onKeyPress from './onKeyPress/onKeyPress.js';
-import onClickHandler from './onClickHandler/onClickHandler.js';
-import prevDefault from '../utils/prevDefault.js';
+import renderApp from './renderApp/renderApp.js';
+import changeLang from '../utils/changeLanguage.js';
 import State from '../utils/State.js';
-import changeLang from './changeLang/changeLang.js';
+import prepareButtons from '../utils/prepareButtons.js';
 
-const selectionState = new State(0);
-const caps = new State(false);
+function app() {
+  const selectionState = new State(0);
+  const caps = new State(false);
+  const buttons = prepareButtons();
+  const options = { buttons, selectionState, caps };
 
-const app = document.createElement('div');
-app.classList.add('app');
-document.body.append(app);
-renderHeader(app);
-renderMain(app);
-renderFooter(app);
+  renderApp(buttons);
 
-document.addEventListener('click', (e) => {
-  onClickHandler(e, caps, selectionState);
-});
-
-window.addEventListener('keydown', (e) => {
-  const { code } = e;
-
-  onKeyPress(e, caps, selectionState);
-
-  prevDefault(e);
-
-  const pressedButton = document.querySelector(`.btn[data-key="${code}"]`);
-
-  if (pressedButton) {
-    pressedButton.classList.add('btn_active');
-  }
-});
-
-window.addEventListener('keyup', (e) => {
-  const { code, shiftKey, ctrlKey } = e;
-
-  prevDefault(e);
-
-  const pressedButton = document.querySelector(`.btn[data-key="${code}"]`);
-
-  if (pressedButton) {
-    pressedButton.classList.remove('btn_active');
-    if (code === 'ControlLeft' && shiftKey) {
-      changeLang(e);
+  document.addEventListener('click', (e) => {
+    const textarea = document.querySelector('.textarea');
+    const { key, lang } = e.target.dataset;
+    if (e.target.classList.contains('textarea')) {
+      selectionState.set(textarea.selectionStart);
     }
-    if (code === 'ShiftLeft' && ctrlKey) {
-      changeLang(e);
+    if (lang) {
+      changeLang(buttons, lang);
     }
-  }
-});
+    if (key) {
+      const { onPress } = buttons[key];
+      if (onPress) {
+        onPress({ e, ...options });
+      }
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    const { code } = e;
+    if (buttons[code]) {
+      const { animate, onPress } = buttons[code];
+      animate(e);
+      if (onPress) {
+        onPress({ e, ...options });
+      }
+    }
+  });
+
+  window.addEventListener('keyup', (e) => {
+    const { code } = e;
+    if (buttons[code]) {
+      buttons[code].animate(e);
+    }
+  });
+}
+
+export default app;

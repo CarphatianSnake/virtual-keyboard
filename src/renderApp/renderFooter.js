@@ -15,10 +15,10 @@ function renderFooter(parent) {
 
   const langChange = document.createElement('p');
   if (language === 'en') {
-    langChange.textContent = 'To change keyboard language use Ctrl + Shift combination';
+    langChange.textContent = 'To change keyboard language use Ctrl + Shift combination or click on language flag';
   }
   if (language === 'ua') {
-    langChange.textContent = 'Для зміни мови клавіатури скористайтеся комбінацієй Ctrl + Shift';
+    langChange.textContent = 'Для зміни мови клавіатури скористайтеся комбінацієй Ctrl + Shift, або клікніть на прапорець мови';
   }
   footer.append(langChange);
 
