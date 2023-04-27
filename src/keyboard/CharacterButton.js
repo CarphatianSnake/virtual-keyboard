@@ -1,4 +1,3 @@
-import getKeyValue from '../../utils/getKeyValue.js';
 import onTextChange from '../../utils/onTextChange.js';
 import setSelection from '../../utils/setSelection.js';
 import Button from './Button.js';
@@ -6,19 +5,38 @@ import Button from './Button.js';
 class CharacterButton extends Button {
   constructor(props) {
     super(props);
-    this.getKeyValue = getKeyValue;
     this.onTextChange = onTextChange;
     this.setSelection = setSelection;
+  }
+
+  getLanguage = () => {
+    return window.localStorage.getItem('lang');
+  }
+
+  getKeyValue = (character, shiftKey, isCaps) => {
+    const language = this.getLanguage();
+    let value = '';
+
+    if (character instanceof Object) {
+      value = character[language];
+    } else if (this.code === 'Enter') {
+      value = '\n';
+    } else if (this.code === 'Tab') {
+      value = '    ';
+    } else {
+      value = character;
+    }
+
+    if (shiftKey) {
+      return isCaps ? value.toLowerCase() : value;
+    }
+  
+    return isCaps ? value : value.toLowerCase();
   }
 
   onPress = ({ e, caps, selectionState }) => {
     const lang = window.localStorage.getItem('lang');
     const textarea = document.querySelector('.textarea');
-    const options = {
-      keyCode: this.code,
-      shiftKey: e.shiftKey,
-      isCaps: caps.get,
-    };
     const { character, altCharacter } = this;
     let char = '';
 
@@ -32,7 +50,7 @@ class CharacterButton extends Button {
       char = character;
     }
 
-    const keyValue = this.getKeyValue(char, options);
+    const keyValue = this.getKeyValue(char, e.shiftKey, caps.get);
     const position = selectionState.get;
     this.setSelection(position, selectionState);
     this.onTextChange(position, position, keyValue);
