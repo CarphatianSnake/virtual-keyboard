@@ -30,7 +30,7 @@ class CharacterButton extends Button {
     return isCaps ? value : value.toLowerCase();
   };
 
-  onPress = ({ e, caps, selectionState }) => {
+  onPress = ({ e, capsState, selectionState }) => {
     const lang = window.localStorage.getItem('lang');
     const textarea = document.querySelector('.textarea');
     const { character, altCharacter } = this;
@@ -46,7 +46,7 @@ class CharacterButton extends Button {
       char = character;
     }
 
-    const keyValue = this.getKeyValue(char, e.shiftKey, caps.get);
+    const keyValue = this.getKeyValue(char, e.shiftKey, capsState.get);
     const position = selectionState.get;
     this.setSelection(position, selectionState);
     this.onTextChange(position, position, keyValue);

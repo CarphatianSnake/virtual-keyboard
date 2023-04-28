@@ -21,9 +21,9 @@ class CapsLockButton extends Button {
     return childElement;
   };
 
-  onPress = ({ caps }) => {
-    caps.set(!caps.get);
-    this.updateContent(caps.get);
+  onPress = ({ capsState }) => {
+    capsState.set(!capsState.get);
+    this.updateContent(capsState.get);
   };
 }
 
