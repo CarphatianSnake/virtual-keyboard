@@ -6,5 +6,5 @@
 }
 
 .textarea::selection {
-  background-color: rgb(205, 94, 230);
+  background-color: rgba(205, 94, 230, 0.65);
 }
