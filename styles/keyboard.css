@@ -20,20 +20,20 @@
   background-color: rgb(46, 35, 31);
   border: 0;
   border-radius: 3px;
-  box-shadow: 2px 2px 2px #000;
+  box-shadow: 3px 3px 3px #000;
   color: #fff;
   cursor: pointer;
   font-weight: 700;
   height: 100%;
   position: relative;
-  transition: background-color 200ms ease-out,
-              box-shadow 200ms ease-out;
+  transition: background-color 100ms ease-out,
+              box-shadow 100ms ease-out;
   width: 100%;
 }
 
 .btn:hover {
-  background-color: rgb(75, 60, 54);
-  box-shadow: 2px 2px 2px #2e2e2e;
+  background-color: rgb(61, 49, 44);
+  box-shadow: 3px 3px 3px #2e2e2e;
 }
 
 .btn__uppercase,
@@ -60,7 +60,8 @@
 }
 
 .btn:active,
-.btn_active {
+.btn_active,
+.btn_active:hover {
   background-color: rgb(115, 68, 126);
   box-shadow: 1px 1px 1px rgb(45, 30, 48);
 }
