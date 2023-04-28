@@ -4,6 +4,10 @@ import State from '../utils/State.js';
 import prepareButtons from '../utils/prepareButtons.js';
 
 function app() {
+  const appLanguage = window.localStorage.getItem('lang');
+  if (!appLanguage) {
+    window.localStorage.setItem('lang', 'en');
+  }
   const selectionState = new State(0);
   const capsState = new State(false);
   const buttons = prepareButtons();
