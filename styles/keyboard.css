@@ -1,0 +1,323 @@
+.main {
+  margin-top: .5rem;
+}
+
+.keyboard {
+  display: grid;
+  gap: 1rem .5rem;
+  grid-template-areas: "Backqoute Digit1 Digit2 Digit3 Digit4 Digit5 Digit6 Digit7 Digit8 Digit9 Digit0 Minus Equal Backspace Backspace"
+                       "Tab KeyQ KeyW KeyE KeyR KeyT KeyY KeyU KeyI KeyO KeyP BracketLeft BracketRight Backslash Delete"
+                       "CapsLock CapsLock KeyA KeyS KeyD KeyF KeyG KeyH KeyJ KeyK KeyL Semicolon Quote Enter Enter"
+                       "ShiftLeft ShiftLeft KeyZ KeyX KeyC KeyV KeyB KeyN KeyM Comma Period Slash ArrowUp ShiftRight ShiftRight"
+                       "ControlLeft MetaLeft AltLeft Space Space Space Space Space Space AltRight ControlRight ArrowLeft ArrowDown ArrowRight ContextMenu";
+  grid-template-rows: repeat(5, 60px);
+  grid-template-columns: repeat(15, 60px);
+  margin-top: 1rem;
+  padding: 0 .5rem;
+}
+
+.btn {
+  background-color: rgb(46, 35, 31);
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px #000;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  height: 100%;
+  position: relative;
+  transition: background-color 100ms ease-out,
+              box-shadow 100ms ease-out;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: rgb(61, 49, 44);
+  box-shadow: 3px 3px 3px #2e2e2e;
+}
+
+.btn__uppercase,
+.btn__caps-indicator {
+  left: 0.5rem;
+  position: absolute;
+  top: 0.25rem;
+}
+
+.btn__caps-indicator {
+  content: "";
+  background-color: rgb(25, 99, 25);
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgb(38, 151, 38);
+  height: 10px;
+  opacity: 0;
+  top: 0.5rem;
+  transition: opacity 300ms ease-out;
+  width: 10px;
+}
+
+.btn__caps-indicator_active {
+  opacity: 1;
+}
+
+.btn:active,
+.btn_active,
+.btn_active:hover {
+  background-color: rgb(115, 68, 126);
+  box-shadow: 1px 1px 1px rgb(45, 30, 48);
+}
+
+.btn[data-key="KeyA"] {
+  grid-area: KeyA;
+}
+
+.btn[data-key="KeyB"] {
+  grid-area: KeyB;
+}
+
+.btn[data-key="KeyC"] {
+  grid-area: KeyC;
+}
+
+.btn[data-key="KeyD"] {
+  grid-area: KeyD;
+}
+
+.btn[data-key="KeyE"] {
+  grid-area: KeyE;
+}
+
+.btn[data-key="KeyF"] {
+  grid-area: KeyF;
+}
+
+.btn[data-key="KeyG"] {
+  grid-area: KeyG;
+}
+
+.btn[data-key="KeyH"] {
+  grid-area: KeyH;
+}
+
+.btn[data-key="KeyI"] {
+  grid-area: KeyI;
+}
+
+.btn[data-key="KeyJ"] {
+  grid-area: KeyJ;
+}
+
+.btn[data-key="KeyK"] {
+  grid-area: KeyK;
+}
+
+.btn[data-key="KeyL"] {
+  grid-area: KeyL;
+}
+
+.btn[data-key="KeyM"] {
+  grid-area: KeyM;
+}
+
+.btn[data-key="KeyN"] {
+  grid-area: KeyN;
+}
+
+.btn[data-key="KeyO"] {
+  grid-area: KeyO;
+}
+
+.btn[data-key="KeyP"] {
+  grid-area: KeyP;
+}
+
+.btn[data-key="KeyQ"] {
+  grid-area: KeyQ;
+}
+
+.btn[data-key="KeyR"] {
+  grid-area: KeyR;
+}
+
+.btn[data-key="KeyS"] {
+  grid-area: KeyS;
+}
+
+.btn[data-key="KeyT"] {
+  grid-area: KeyT;
+}
+
+.btn[data-key="KeyU"] {
+  grid-area: KeyU;
+}
+
+.btn[data-key="KeyV"] {
+  grid-area: KeyV;
+}
+
+.btn[data-key="KeyW"] {
+  grid-area: KeyW;
+}
+
+.btn[data-key="KeyX"] {
+  grid-area: KeyX;
+}
+
+.btn[data-key="KeyY"] {
+  grid-area: KeyY;
+}
+
+.btn[data-key="KeyZ"] {
+  grid-area: KeyZ;
+}
+
+.btn[data-key="Backqoute"] {
+  grid-area: Backqoute;
+}
+
+.btn[data-key="Tab"] {
+  grid-area: Tab;
+}
+
+.btn[data-key="CapsLock"] {
+  grid-area: CapsLock;
+}
+
+.btn[data-key="ShiftLeft"] {
+  grid-area: ShiftLeft;
+}
+
+.btn[data-key="ControlLeft"] {
+  grid-area: ControlLeft;
+}
+
+.btn[data-key="AltLeft"] {
+  grid-area: AltLeft;
+}
+
+.btn[data-key="MetaLeft"] {
+  grid-area: MetaLeft;
+}
+
+.btn[data-key="Space"] {
+  grid-area: Space;
+}
+
+.btn[data-key="Backspace"] {
+  grid-area: Backspace;
+}
+
+.btn[data-key="Digit1"] {
+  grid-area: Digit1;
+}
+
+.btn[data-key="Digit2"] {
+  grid-area: Digit2;
+}
+
+.btn[data-key="Digit3"] {
+  grid-area: Digit3;
+}
+
+.btn[data-key="Digit4"] {
+  grid-area: Digit4;
+}
+
+.btn[data-key="Digit5"] {
+  grid-area: Digit5;
+}
+
+.btn[data-key="Digit6"] {
+  grid-area: Digit6;
+}
+
+.btn[data-key="Digit7"] {
+  grid-area: Digit7;
+}
+
+.btn[data-key="Digit8"] {
+  grid-area: Digit8;
+}
+
+.btn[data-key="Digit9"] {
+  grid-area: Digit9;
+}
+
+.btn[data-key="Digit0"] {
+  grid-area: Digit0;
+}
+
+.btn[data-key="Minus"] {
+  grid-area: Minus;
+}
+
+.btn[data-key="Equal"] {
+  grid-area: Equal;
+}
+
+.btn[data-key="BracketLeft"] {
+  grid-area: BracketLeft;
+}
+
+.btn[data-key="BracketRight"] {
+  grid-area: BracketRight;
+}
+
+.btn[data-key="Backslash"] {
+  grid-area: Backslash;
+}
+
+.btn[data-key="Delete"] {
+  grid-area: Delete;
+}
+
+.btn[data-key="Semicolon"] {
+  grid-area: Semicolon;
+}
+
+.btn[data-key="Quote"] {
+  grid-area: Quote;
+}
+
+.btn[data-key="Enter"] {
+  grid-area: Enter;
+}
+
+.btn[data-key="ShiftRight"] {
+  grid-area: ShiftRight;
+}
+
+.btn[data-key="Comma"] {
+  grid-area: Comma;
+}
+
+.btn[data-key="Period"] {
+  grid-area: Period;
+}
+
+.btn[data-key="AltRight"] {
+  grid-area: AltRight;
+}
+
+.btn[data-key="ControlRight"] {
+  grid-area: ControlRight;
+}
+
+.btn[data-key="ArrowUp"] {
+  grid-area: ArrowUp;
+}
+
+.btn[data-key="ArrowDown"] {
+  grid-area: ArrowDown;
+}
+
+.btn[data-key="ArrowRight"] {
+  grid-area: ArrowRight;
+}
+
+.btn[data-key="ArrowLeft"] {
+  grid-area: ArrowLeft;
+}
+
+.btn[data-key="ContextMenu"] {
+  grid-area: ContextMenu;
+}
