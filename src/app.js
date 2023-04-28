@@ -14,6 +14,7 @@ function app() {
   document.addEventListener('click', (e) => {
     const textarea = document.querySelector('.textarea');
     const { key, lang } = e.target.dataset;
+    textarea.focus();
     if (e.target.classList.contains('textarea')) {
       selectionState.set(textarea.selectionStart);
     }
