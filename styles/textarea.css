@@ -4,3 +4,7 @@
   resize: none;
   width: 100%;
 }
+
+.textarea::selection {
+  background-color: rgb(205, 94, 230);
+}

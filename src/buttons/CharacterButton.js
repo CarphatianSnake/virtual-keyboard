@@ -54,6 +54,7 @@ class CharacterButton extends Button {
     this.setSelection(selectionState.get, selectionState);
 
     textarea.focus();
+    textarea.scrollTop = textarea.scrollHeight;
   };
 }
 
