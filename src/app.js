@@ -5,9 +5,9 @@ import prepareButtons from '../utils/prepareButtons.js';
 
 function app() {
   const selectionState = new State(0);
-  const caps = new State(false);
+  const capsState = new State(false);
   const buttons = prepareButtons();
-  const options = { buttons, selectionState, caps };
+  const options = { buttons, selectionState, capsState };
 
   renderApp(buttons);
 
